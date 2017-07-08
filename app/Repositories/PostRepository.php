@@ -16,11 +16,18 @@ class PostRepository extends BaseRepo
         return new Post();
     }
 
+    /**
+     * @return mixed
+     */
     public function getPosts()
     {
-        return $this->getModel()->all();
+        return $this->getModel()->paginate(10);
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function getPost($id)
     {
         return $this->find($id);
@@ -56,6 +63,9 @@ class PostRepository extends BaseRepo
         return $post;
     }
 
+    /**
+     * @param $id
+     */
     public function deletePost($id)
     {
         $post = $this->find($id);

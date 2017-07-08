@@ -11,10 +11,10 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\User::create([
-        'first_name' => 'Javier',
-        'last_name' => 'Montalvo',
-        'username' => 'giojavi04',
+        \LVeterinaria\User::create([
+        'first_name' => 'Jason',
+        'last_name' => 'Martinez',
+        'username' => 'jmartinez',
         'email' => 'admin@lveterinaria.net',
         'password' => bcrypt('secret'),
         'type' => 'admin',
