@@ -5,48 +5,90 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Editar Post</div>
+                    <div class="panel-heading">Edición de mascota</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" method="POST" action="{{ route('post.update', [$post->id]) }}">
+                        <form class="form-horizontal" method="POST" action="{{ route('post.update', [$post->id]) }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             {{ method_field('PUT') }}
-                            <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
-                                <label for="title" class="col-md-4 control-label">Título</label>
+
+                            <div class="form-group{{ $errors->has('client_name') ? ' has-error' : '' }}">
+                                <label for="client_name" class="col-md-4 control-label">Nombre del Cliente:</label>
 
                                 <div class="col-md-6">
-                                    <input id="title" type="text" class="form-control" name="title" value="{{ $post->title }}" required autofocus>
+                                    <input id="client_name" type="text" class="form-control" name="client_name" value="{{ $post->client_name }}" required autofocus>
 
-                                    @if ($errors->has('title'))
+                                    @if ($errors->has('client_name'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('title') }}</strong>
+                                        <strong>{{ $errors->first('client_name') }}</strong>
                                     </span>
                                     @endif
                                 </div>
                             </div>
 
-                            <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
-                                <label for="description" class="col-md-4 control-label">Descripción</label>
+                            <div class="form-group{{ $errors->has('pet_name') ? ' has-error' : '' }}">
+                                <label for="pet_name" class="col-md-4 control-label">Nombre de la mascota:</label>
 
                                 <div class="col-md-6">
-                                    <input id="description" type="text" class="form-control" name="description" value="{{ $post->description }}" required>
+                                    <input id="pet_name" type="text" class="form-control" name="pet_name" value="{{ $post->pet_name }}" required>
 
-                                    @if ($errors->has('description'))
+                                    @if ($errors->has('pet_name'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('description') }}</strong>
+                                        <strong>{{ $errors->first('pet_name') }}</strong>
                                     </span>
                                     @endif
                                 </div>
                             </div>
 
-                            <div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}">
-                                <label for="content" class="col-md-4 control-label">Contenido</label>
+                            <div class="form-group">
+                                <label for="pet_img" class="col-md-4 control-label">Imágen de la mascota:</label>
+                                <div class="col-md-6">
+                                    <input type="file" id="pet_img" name="pet_img">
+                                    <p class="help-block">Puedes dejar vacio este campo si ya tienes una imagen subida.</p>
+                                    @if ($errors->has('pet_img'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('pet_img') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('pet_age') ? ' has-error' : '' }}">
+                                <label for="pet_age" class="col-md-4 control-label">Edad de la mascota:</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="content" class="form-control" name="content" value="{{ old('content') }}" rows="7" required>{{$post->content}}</textarea>
+                                    <input id="pet_age" type="number" class="form-control" name="pet_age" value="{{ $post->pet_age }}">
 
-                                    @if ($errors->has('content'))
+                                    @if ($errors->has('pet_age'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('content') }}</strong>
+                                        <strong>{{ $errors->first('pet_age') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('color') ? ' has-error' : '' }}">
+                                <label for="color" class="col-md-4 control-label">Color de la mascota:</label>
+
+                                <div class="col-md-6">
+                                    <input id="color" type="text" class="form-control" name="color" value="{{ $post->color }}">
+
+                                    @if ($errors->has('color'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('color') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('weight') ? ' has-error' : '' }}">
+                                <label for="weight" class="col-md-4 control-label">Peso de la mascota:</label>
+
+                                <div class="col-md-6">
+                                    <input id="weight" type="text" class="form-control" name="weight" value="{{ $post->weight }}">
+
+                                    @if ($errors->has('weight'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('weight') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -55,7 +97,7 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Guardar
+                                        Actualizar Mascota
                                     </button>
                                 </div>
                             </div>
