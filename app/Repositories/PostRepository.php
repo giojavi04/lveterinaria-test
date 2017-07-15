@@ -41,13 +41,27 @@ class PostRepository extends BaseRepo
     {
         $user = Auth::user();
 
-        $img = request()->file('pet_img')->store('public/pets');
+        if(request()->file('pet_img')) {
+            $img = request()->file('pet_img')->store('public/pets');
+        } else {
+            $img = null;
+        }
 
+        if(request()->file('qr')) {
+            $qr = request()->file('qr')->store('public/pets/qr');
+        } else {
+            $qr = null;
+        }
         $post = $this->model;
         $post->fill($request->all());
         $post->user_id = $user->id;
         $post->pet_img = $img;
+        $post->qr = $qr;
         $post->save();
+
+        $postU = $this->find($post->id);
+        $postU->url =  url('/') . '/' . $postU->id;
+        $postU->update();
 
         return $post;
     }
@@ -62,8 +76,10 @@ class PostRepository extends BaseRepo
         $post = $this->find($id);
 
         $img = request()->file('pet_img') ? request()->file('pet_img')->store('public/pets') : $post->pet_img;
+        $qr = request()->file('qr') ? request()->file('qr')->store('public/pets/qr') : $post->qr;
         $post->fill($request->all());
         $post->pet_img = $img;
+        $post->qr = $qr;
         $post->update();
 
         return $post;

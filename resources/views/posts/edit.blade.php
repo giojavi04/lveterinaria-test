@@ -25,6 +25,34 @@
                                 </div>
                             </div>
 
+                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <label for="email" class="col-md-4 control-label">Email del Cliente:</label>
+
+                                <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ $post->email }}" required>
+
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                                <label for="phone" class="col-md-4 control-label">Teléfono del Cliente:</label>
+
+                                <div class="col-md-6">
+                                    <input id="phone" type="text" class="form-control" name="phone" value="{{ $post->phone }}" required>
+
+                                    @if ($errors->has('phone'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('phone') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div class="form-group{{ $errors->has('pet_name') ? ' has-error' : '' }}">
                                 <label for="pet_name" class="col-md-4 control-label">Nombre de la mascota:</label>
 
@@ -89,6 +117,33 @@
                                     @if ($errors->has('weight'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('weight') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('chip') ? ' has-error' : '' }}">
+                                <label for="chip" class="col-md-4 control-label">Chip de la mascota:</label>
+
+                                <div class="col-md-6">
+                                    <input id="chip" type="text" class="form-control" name="chip" value="{{ $post->chip }}">
+
+                                    @if ($errors->has('chip'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('chip') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="qr" class="col-md-4 control-label">Código QR:</label>
+                                <div class="col-md-6">
+                                    <input type="file" id="qr" name="qr">
+                                    <p class="help-block">Solo se permite png y jpg.</p>
+                                    @if ($errors->has('qr'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('qr') }}</strong>
                                     </span>
                                     @endif
                                 </div>

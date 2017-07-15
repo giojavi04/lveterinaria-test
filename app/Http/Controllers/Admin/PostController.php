@@ -3,6 +3,7 @@
 namespace LVeterinaria\Http\Controllers\Admin;
 
 use LVeterinaria\Http\Controllers\Controller;
+use LVeterinaria\Http\Requests\CreateRegister;
 use LVeterinaria\Repositories\PostRepository;
 use Illuminate\Http\Request;
 
@@ -36,10 +37,10 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request|CreateRegister $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateRegister $request)
     {
         $this->postRepository->createPost($request);
 
@@ -62,11 +63,11 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param Request|CreateRegister $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateRegister $request, $id)
     {
         $this->postRepository->updatePost($request, $id);
 

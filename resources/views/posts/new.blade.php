@@ -9,7 +9,6 @@
                     <div class="panel-body">
                         <form class="form-horizontal" method="POST" action="{{ route('post.store') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
-                            {{ method_field('POST') }}
 
                             <div class="form-group{{ $errors->has('client_name') ? ' has-error' : '' }}">
                                 <label for="client_name" class="col-md-4 control-label">Nombre del Cliente:</label>
@@ -20,6 +19,34 @@
                                     @if ($errors->has('client_name'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('client_name') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <label for="email" class="col-md-4 control-label">Email del Cliente:</label>
+
+                                <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                                <label for="phone" class="col-md-4 control-label">Teléfono del Cliente:</label>
+
+                                <div class="col-md-6">
+                                    <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}" required>
+
+                                    @if ($errors->has('phone'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('phone') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -42,7 +69,7 @@
                             <div class="form-group">
                                 <label for="pet_img" class="col-md-4 control-label">Imágen de la mascota:</label>
                                 <div class="col-md-6">
-                                    <input type="file" id="pet_img" name="pet_img">
+                                    <input type="file" id="pet_img" name="pet_img" required>
                                     <p class="help-block">Solo se permite png y jpg.</p>
                                     @if ($errors->has('pet_img'))
                                         <span class="help-block">
@@ -89,6 +116,33 @@
                                     @if ($errors->has('weight'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('weight') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('chip') ? ' has-error' : '' }}">
+                                <label for="chip" class="col-md-4 control-label">Chip de la mascota:</label>
+
+                                <div class="col-md-6">
+                                    <input id="chip" type="text" class="form-control" name="chip" value="{{ old('chip') }}">
+
+                                    @if ($errors->has('chip'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('chip') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="qr" class="col-md-4 control-label">Código QR:</label>
+                                <div class="col-md-6">
+                                    <input type="file" id="qr" name="qr" required>
+                                    <p class="help-block">Solo se permite png y jpg.</p>
+                                    @if ($errors->has('qr'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('qr') }}</strong>
                                     </span>
                                     @endif
                                 </div>
