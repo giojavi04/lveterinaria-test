@@ -52,7 +52,10 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <!--<li><a href="#">Usuarios</a></li>-->
+                                    <li><a href="{{ route('login') }}">Reporte de usuarios</a></li>
+                                    <li><a href="{{ route('login') }}">Reporte de mascotas</a></li>
+                                    <li><a href="{{ route('login') }}">Reporte de servicios</a></li>
+                                    <hr>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
