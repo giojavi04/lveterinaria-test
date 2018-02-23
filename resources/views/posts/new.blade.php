@@ -14,39 +14,15 @@
                                 <label for="client_name" class="col-md-4 control-label">Nombre del Cliente:</label>
 
                                 <div class="col-md-6">
-                                    <input id="client_name" type="text" class="form-control" name="client_name" value="{{ old('client_name') }}" required autofocus>
+                                    <select class="form-control" name="user_id" required autofocus>
+                                        @foreach($users as $user)
+                                            <option value="{{$user->id}}">{{$user->first_name}} {{$user->last_name}}</option>
+                                        @endforeach
+                                    </select>
 
-                                    @if ($errors->has('client_name'))
+                                    @if ($errors->has('user_id'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('client_name') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-4 control-label">Email del Cliente:</label>
-
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                    @if ($errors->has('email'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                                <label for="phone" class="col-md-4 control-label">Teléfono del Cliente:</label>
-
-                                <div class="col-md-6">
-                                    <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}" required>
-
-                                    @if ($errors->has('phone'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('phone') }}</strong>
+                                        <strong>{{ $errors->first('user_id') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -122,7 +98,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('chip') ? ' has-error' : '' }}">
-                                <label for="chip" class="col-md-4 control-label">Chip de la mascota:</label>
+                                <label for="chip" class="col-md-4 control-label">Raza de la mascota:</label>
 
                                 <div class="col-md-6">
                                     <input id="chip" type="text" class="form-control" name="chip" value="{{ old('chip') }}">

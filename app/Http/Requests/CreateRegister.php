@@ -24,7 +24,7 @@ class CreateRegister extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'email',
+            'user_id' => 'integer',
             'pet_img' => 'image',
             'qr' => 'image'
         ];

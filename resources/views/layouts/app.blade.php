@@ -46,16 +46,25 @@
                             <li><a href="{{ route('login') }}">Entrar</a></li>
                             <li><a href="{{ route('register') }}">Registro</a></li>
                         @else
+                            @can('admin')
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-espanded="false">
+                                        Reportes <span class="caret"></span>
+                                    </a>
+
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ route('report.users') }}">Reporte de usuarios</a></li>
+                                        <li><a href="{{ route('report.mascots') }}">Reporte de mascotas</a></li>
+                                        <li><a href="{{ route('report.services') }}">Reporte de servicios</a></li>
+                                    </ul>
+                                </li>
+                            @endcan
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->username }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{ route('login') }}">Reporte de usuarios</a></li>
-                                    <li><a href="{{ route('login') }}">Reporte de mascotas</a></li>
-                                    <li><a href="{{ route('login') }}">Reporte de servicios</a></li>
-                                    <hr>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

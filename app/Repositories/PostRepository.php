@@ -21,7 +21,7 @@ class PostRepository extends BaseRepo
      */
     public function getPosts()
     {
-        return $this->getModel()->paginate(10);
+        return $this->getModel()->with(['user'])->paginate(10);
     }
 
     /**
@@ -30,7 +30,7 @@ class PostRepository extends BaseRepo
      */
     public function getPost($id)
     {
-        return $this->find($id);
+        return $this->getModel()->with(['user'])->find($id);
     }
 
     /**
@@ -39,8 +39,6 @@ class PostRepository extends BaseRepo
      */
     public function createPost($request)
     {
-        $user = Auth::user();
-
         if(request()->file('pet_img')) {
             $img = request()->file('pet_img')->store('public/pets');
         } else {
@@ -54,7 +52,6 @@ class PostRepository extends BaseRepo
         }
         $post = $this->model;
         $post->fill($request->all());
-        $post->user_id = $user->id;
         $post->pet_img = $img;
         $post->qr = $qr;
         $post->save();

@@ -2,6 +2,7 @@
 
 namespace LVeterinaria\Http\Controllers\Admin;
 
+use LVeterinaria\Repositories\UserRepository;
 use LVeterinaria\Http\Controllers\Controller;
 use LVeterinaria\Http\Requests\CreateRegister;
 use LVeterinaria\Repositories\PostRepository;
@@ -13,15 +14,23 @@ class PostController extends Controller
      * @var PostRepository
      */
     private $postRepository;
+	/**
+	 * @var UserRepository
+	 */
+	private $userRepository;
 
-    /**
-     * PostController constructor.
-     * @param PostRepository $postRepository
-     */
-    public function __construct(PostRepository $postRepository)
+	/**
+	 * PostController constructor.
+	 *
+	 * @param PostRepository $postRepository
+	 * @param UserRepository $userRepository
+	 */
+    public function __construct(PostRepository $postRepository,
+								UserRepository $userRepository)
     {
 
         $this->postRepository = $postRepository;
+	    $this->userRepository = $userRepository;
     }
 
     /**
@@ -31,7 +40,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.new');
+    	$users = $this->userRepository->getUsers();
+
+        return view('posts.new', compact('users'));
     }
 
     /**

@@ -12,14 +12,12 @@
                         @endif
                         <ul class="list-group">
                             <li class="list-group-item"><b>Id de la mascota: </b> {{$post->id}}</li>
-                            <li class="list-group-item"><b>Nombre del cliente: </b> {{$post->client_name}}</li>
-                            <li class="list-group-item"><b>Email del cliente: </b> {{$post->email}}</li>
-                            <li class="list-group-item"><b>Teléfono del cliente: </b> {{$post->phone}}</li>
+                            <li class="list-group-item"><b>Nombre del dueño: </b> {{$post->user->first_name}} {{$post->user->last_name}}</li>
                             <li class="list-group-item"><b>Nombre de la mascota: </b> {{$post->pet_name}}</li>
                             <li class="list-group-item"><b>Edad de la mascota: </b> {{$post->pet_age}}</li>
                             <li class="list-group-item"><b>Color de la mascota: </b> {{$post->color}}</li>
                             <li class="list-group-item"><b>Peso de la mascota:</b> {{$post->weight}}</li>
-                            <li class="list-group-item"><b>Chip de la mascota:</b> {{$post->chip}}</li>
+                            <li class="list-group-item"><b>Raza de la mascota:</b> {{$post->chip}}</li>
                             <li class="list-group-item"><b>Url de la mascota:</b> {{$post->url}}</li>
                         </ul>
                         @if($post->qr)

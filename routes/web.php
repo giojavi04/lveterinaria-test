@@ -43,6 +43,18 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'can:
         'uses' => 'PostController@destroy'
     ])->name('post.destroy');
 
-    //Days
+    Route::get('/reports/users', [
+		'uses' => 'ReportController@showUsers'
+	])->name('report.users');
+
+	Route::get('/reports/mascots', [
+		'uses' => 'ReportController@showMascots'
+	])->name('report.mascots');
+
+	Route::get('/reports/services', [
+		'uses' => 'ReportController@showServices'
+	])->name('report.services');
+
+    //Users
     Route::resource('users', 'UserController');
 });
