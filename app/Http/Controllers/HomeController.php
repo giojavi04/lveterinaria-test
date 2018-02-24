@@ -31,7 +31,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = $this->postRepository->getPosts();
+        $posts = $this->postRepository->getPostsByAuth();
 
         return view('home', compact('posts'));
     }

@@ -24,6 +24,16 @@ class PostRepository extends BaseRepo
         return $this->getModel()->with(['user'])->paginate(10);
     }
 
+	/**
+	 * @return mixed
+	 */
+	public function getPostsByAuth()
+	{
+		$user = Auth::user();
+
+		return $this->getModel()->where('user_id', $user->id)->with(['user'])->paginate(10);
+	}
+
     /**
      * @param $id
      * @return mixed

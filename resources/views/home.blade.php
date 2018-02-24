@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h3>Últimas mascotas ingresadas</h3>
+            <h3>Mis mascotas</h3>
             @can('admin')
                 <h2 class="text-center">
                     <a href="{{route('post.create')}}" class="btn btn-primary">
