@@ -67,6 +67,34 @@
                                 </div>
                             </div>
 
+                            <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
+                                <label for="type" class="col-md-4 control-label">Tipo de mascota:</label>
+
+                                <div class="col-md-6">
+                                    <input id="type" type="text" class="form-control" name="type" value="{{ $post->type }}" readonly>
+
+                                    @if ($errors->has('type'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('type') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('race') ? ' has-error' : '' }}">
+                                <label for="race" class="col-md-4 control-label">Raza de la mascota:</label>
+
+                                <div class="col-md-6">
+                                    <input id="race" type="text" class="form-control" name="race" value="{{ $post->race }}">
+
+                                    @if ($errors->has('race'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('race') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div class="form-group{{ $errors->has('color') ? ' has-error' : '' }}">
                                 <label for="color" class="col-md-4 control-label">Color de la mascota:</label>
 
@@ -96,7 +124,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('chip') ? ' has-error' : '' }}">
-                                <label for="chip" class="col-md-4 control-label">Raza de la mascota:</label>
+                                <label for="chip" class="col-md-4 control-label">Chip de la mascota:</label>
 
                                 <div class="col-md-6">
                                     <input id="chip" type="text" class="form-control" name="chip" value="{{ $post->chip }}">

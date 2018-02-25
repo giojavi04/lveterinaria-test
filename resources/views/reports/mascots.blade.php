@@ -13,10 +13,12 @@
                             <th>#</th>
                             <th>Cliente</th>
                             <th>Nombre de mascota</th>
-                            <th>Raza</th>
                             <th>Edad</th>
+                            <th>Tipo</th>
+                            <th>Raza</th>
                             <th>Color</th>
                             <th>Peso</th>
+                            <th>Chip</th>
                             <th>Url</th>
                             <th>Ingresado</th>
                         </tr>
@@ -27,10 +29,12 @@
                                     <td>{{$mascot->id}}</td>
                                     <td>{{$mascot->user->first_name}} {{$mascot->user->last_name}}</td>
                                     <td>{{$mascot->pet_name}}</td>
-                                    <td>{{$mascot->chip}}</td>
                                     <td>{{$mascot->pet_age}}</td>
+                                    <td>{{$mascot->type}}</td>
+                                    <td>{{$mascot->race}}</td>
                                     <td>{{$mascot->color}}</td>
                                     <td>{{$mascot->weight}}</td>
+                                    <td>{{$mascot->chip}}</td>
                                     <td>{{$mascot->url}}</td>
                                     <td>{{$mascot->created_at}}</td>
                                 </tr>

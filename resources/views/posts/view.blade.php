@@ -11,14 +11,16 @@
                             <img src="{{ Storage::disk()->url($post->pet_img) }}" alt="{{$post->pet_name}}" style="max-width: 100%;">
                         @endif
                         <ul class="list-group">
-                            <li class="list-group-item"><b>Id de la mascota: </b> {{$post->id}}</li>
+                            <li class="list-group-item"><b>Id: </b> {{$post->id}}</li>
                             <li class="list-group-item"><b>Nombre del dueño: </b> {{$post->user->first_name}} {{$post->user->last_name}}</li>
                             <li class="list-group-item"><b>Nombre de la mascota: </b> {{$post->pet_name}}</li>
-                            <li class="list-group-item"><b>Edad de la mascota: </b> {{$post->pet_age}}</li>
-                            <li class="list-group-item"><b>Color de la mascota: </b> {{$post->color}}</li>
-                            <li class="list-group-item"><b>Peso de la mascota:</b> {{$post->weight}}</li>
-                            <li class="list-group-item"><b>Raza de la mascota:</b> {{$post->chip}}</li>
-                            <li class="list-group-item"><b>Url de la mascota:</b> {{$post->url}}</li>
+                            <li class="list-group-item"><b>Edad: </b> {{$post->pet_age}}</li>
+                            <li class="list-group-item"><b>Tipo: </b> {{$post->type}}</li>
+                            <li class="list-group-item"><b>Raza: </b> {{$post->race}}</li>
+                            <li class="list-group-item"><b>Color: </b> {{$post->color}}</li>
+                            <li class="list-group-item"><b>Peso:</b> {{$post->weight}}</li>
+                            <li class="list-group-item"><b>Chip:</b> {{$post->chip}}</li>
+                            <li class="list-group-item"><b>Url:</b> {{$post->url}}</li>
                         </ul>
                         @if($post->qr)
                             <img src="{{ Storage::disk()->url($post->qr) }}" alt="{{$post->pet_name}}" style="max-width: 100%;">

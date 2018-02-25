@@ -104,4 +104,66 @@ class PostRepository extends BaseRepo
 
         $post->delete();
     }
+
+    public function getRaces()
+    {
+    	$races = [
+		    (object) [
+			    'name' => ''
+		    ],
+		    (object) [
+		        'name' => 'Conejo'
+	        ],
+		    (object) [
+		        'name' => 'Caballo'
+	        ],
+		    (object) [
+		        'name' => 'Cabra'
+			],
+		    (object) [
+		        'name' => 'Ganso'
+			],
+		    (object) [
+		        'name' => 'Perro'
+			],
+		    (object) [
+		        'name' => 'Gato'
+			],
+		    (object) [
+		        'name' => 'Pájaro'
+			],
+		    (object) [
+		        'name' => 'Roedor'
+			],
+		    (object) [
+		        'name' => 'Tortuga'
+			],
+		    (object) [
+		        'name' => 'Codorniz'
+			],
+		    (object) [
+		        'name' => 'Asno'
+			],
+		    (object) [
+		        'name' => 'Oveja'
+			],
+		    (object) [
+		        'name' => 'Pato'
+			],
+		    (object) [
+		        'name' => 'Pavo'
+			],
+		    (object) [
+		        'name' => 'Vaca'
+			],
+		    (object) [
+		        'name' => 'Gallo'
+			],
+		    (object) [
+		        'name' => 'Gallina'
+			]
+	    ];
+
+    	return collect($races);
+	}
 }

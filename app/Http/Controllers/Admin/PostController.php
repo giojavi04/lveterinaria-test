@@ -41,8 +41,9 @@ class PostController extends Controller
     public function create()
     {
     	$users = $this->userRepository->getUsers();
+    	$races = $this->postRepository->getRaces();
 
-        return view('posts.new', compact('users'));
+        return view('posts.new', compact('users', 'races'));
     }
 
     /**
@@ -67,8 +68,9 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = $this->postRepository->getPost($id);
+	    $races = $this->postRepository->getRaces();
 
-        return view('posts.edit', compact('post'));
+        return view('posts.edit', compact('post', 'races'));
     }
 
     /**

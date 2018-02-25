@@ -14,6 +14,8 @@
                                 <th>Nombre</th>
                                 <th>Apellido</th>
                                 <th>Username</th>
+                                <th>Dirección</th>
+                                <th>Teléfono</th>
                                 <th>Email</th>
                                 <th>Tipo</th>
                                 <th>Creado</th>
@@ -26,6 +28,8 @@
                                     <td>{{$user->first_name}}</td>
                                     <td>{{$user->last_name}}</td>
                                     <td>{{$user->username}}</td>
+                                    <td>{{$user->address}}</td>
+                                    <td>{{$user->phone}}</td>
                                     <td>{{$user->email}}</td>
                                     <td>{{$user->type}}</td>
                                     <td>{{$user->created_at}}</td>
