@@ -27,6 +27,14 @@ class PostRepository extends BaseRepo
 	/**
 	 * @return mixed
 	 */
+	public function getPostsAll()
+	{
+		return $this->getModel()->with(['user'])->get();
+	}
+
+	/**
+	 * @return mixed
+	 */
 	public function getPostsByAuth()
 	{
 		$user = Auth::user();
@@ -40,7 +48,7 @@ class PostRepository extends BaseRepo
      */
     public function getPost($id)
     {
-        return $this->getModel()->with(['user'])->find($id);
+        return $this->getModel()->with(['user', 'record'])->find($id);
     }
 
     /**

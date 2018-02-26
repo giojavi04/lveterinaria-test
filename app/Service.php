@@ -19,4 +19,12 @@ class Service extends Model
 	protected $fillable = [
 		'name', 'description', 'img'
 	];
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\HasOne
+	 */
+	public function record()
+	{
+		return $this->hasOne(Record::class);
+	}
 }

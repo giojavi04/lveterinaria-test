@@ -10,8 +10,8 @@
                         <form class="form-horizontal" method="POST" action="{{ route('post.store') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            <div class="form-group{{ $errors->has('client_name') ? ' has-error' : '' }}">
-                                <label for="client_name" class="col-md-4 control-label">Nombre del Cliente:</label>
+                            <div class="form-group{{ $errors->has('user_id') ? ' has-error' : '' }}">
+                                <label for="user_id" class="col-md-4 control-label">Nombre del Cliente:</label>
 
                                 <div class="col-md-6">
                                     <select class="form-control" name="user_id" required autofocus>

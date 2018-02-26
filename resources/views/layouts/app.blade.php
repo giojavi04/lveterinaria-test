@@ -49,13 +49,23 @@
                             @can('admin')
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-espanded="false">
+                                        Módulos <span class="caret"></span>
+                                    </a>
+
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ route('post.create') }}">Crear mascota</a></li>
+                                        <li><a href="{{ route('records.index') }}">Servicios</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-espanded="false">
                                         Reportes <span class="caret"></span>
                                     </a>
 
                                     <ul class="dropdown-menu" role="menu">
                                         <li><a href="{{ route('report.users') }}">Reporte de usuarios</a></li>
                                         <li><a href="{{ route('report.mascots') }}">Reporte de mascotas</a></li>
-                                        <li><a href="{{ route('report.services') }}">Reporte de servicios</a></li>
+                                        {{-- <li><a href="{{ route('report.services') }}">Reporte de servicios</a></li> --}}
                                     </ul>
                                 </li>
                             @endcan

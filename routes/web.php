@@ -55,6 +55,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'can:
 		'uses' => 'ReportController@showServices'
 	])->name('report.services');
 
+	Route::resource('records', 'RecordController');
+
     //Users
     Route::resource('users', 'UserController');
 });

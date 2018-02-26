@@ -22,4 +22,12 @@ class ServiceRepository extends BaseRepo
 	{
 		return $this->getModel()->paginate(10);
 	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getServicesAll()
+	{
+		return $this->getModel()->get();
+	}
 }

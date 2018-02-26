@@ -28,7 +28,7 @@
                                 <tr>
                                     <td>{{$mascot->id}}</td>
                                     <td>{{$mascot->user->first_name}} {{$mascot->user->last_name}}</td>
-                                    <td>{{$mascot->pet_name}}</td>
+                                    <td><a href="{{$mascot->url}}">{{$mascot->pet_name}}</a></td>
                                     <td>{{$mascot->pet_age}}</td>
                                     <td>{{$mascot->type}}</td>
                                     <td>{{$mascot->race}}</td>

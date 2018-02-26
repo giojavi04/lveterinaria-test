@@ -21,6 +21,13 @@
                             <li class="list-group-item"><b>Peso:</b> {{$post->weight}}</li>
                             <li class="list-group-item"><b>Chip:</b> {{$post->chip}}</li>
                             <li class="list-group-item"><b>Url:</b> {{$post->url}}</li>
+                            @if(count($records) > 0)
+                                <li class="list-group-item"><b>Servicios:</b>
+                                    @foreach($records as $record)
+                                        {{$record->service->name}},
+                                    @endforeach
+                                </li>
+                            @endif
                         </ul>
                         @if($post->qr)
                             <img src="{{ Storage::disk()->url($post->qr) }}" alt="{{$post->pet_name}}" style="max-width: 100%;">
@@ -32,7 +39,7 @@
                     @can('admin')
                         <li><a href="{{ route('post.edit', [$post->id]) }}">Editar post</a></li>
                         <li>
-                            <a href="{{ route('logout', [$post->id]) }}"
+                            <a href="{{ route('post.destroy', [$post->id]) }}"
                                onclick="event.preventDefault();
                                                          document.getElementById('delete-post').submit();">
                                 <span class="text-danger">Eliminar post</span></a>
