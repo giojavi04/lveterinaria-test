@@ -13,6 +13,9 @@
                         <ul class="list-group">
                             <li class="list-group-item"><b>Id: </b> {{$post->id}}</li>
                             <li class="list-group-item"><b>Nombre del dueño: </b> {{$post->user->first_name}} {{$post->user->last_name}}</li>
+                            <li class="list-group-item"><b>Email del dueño: </b> {{$post->user->email}}</li>
+                            <li class="list-group-item"><b>Dirección del dueño: </b>{{$post->user->address}}</li>
+                            <li class="list-group-item"><b>Teléfono del dueño: </b>{{$post->user->phone}}</li>
                             <li class="list-group-item"><b>Nombre de la mascota: </b> {{$post->pet_name}}</li>
                             <li class="list-group-item"><b>Edad: </b> {{$post->pet_age}}</li>
                             <li class="list-group-item"><b>Tipo: </b> {{$post->type}}</li>
