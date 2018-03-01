@@ -25,10 +25,12 @@
                             <li class="list-group-item"><b>Chip:</b> {{$post->chip}}</li>
                             <li class="list-group-item"><b>Url:</b> {{$post->url}}</li>
                             @if(count($records) > 0)
-                                <li class="list-group-item"><b>Servicios:</b>
-                                    @foreach($records as $record)
-                                        {{$record->service->name}},
-                                    @endforeach
+                                <li class="list-group-item"><b>Historial:</b>
+                                    <ul style="margin-top: 10px;">
+                                        @foreach($records as $record)
+                                            <li>{{$record->created_at->format('M d Y')}} - {{$record->service->name}}: <b>{{$record->observation}}</b></li>
+                                        @endforeach
+                                    </ul>
                                 </li>
                             @endif
                         </ul>
