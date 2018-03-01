@@ -141,7 +141,7 @@
                                 <label for="qr" class="col-md-4 control-label">Código QR:</label>
                                 <div class="col-md-6">
                                     <input type="file" id="qr" name="qr">
-                                    <p class="help-block">Solo se permite png y jpg.</p>
+                                    <p class="help-block">Para generar un código Qr ingrese a la siguiente <a href="http://www.codigos-qr.com/generador-de-codigos-qr/" target="_black">link</a></p>
                                     @if ($errors->has('qr'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('qr') }}</strong>
