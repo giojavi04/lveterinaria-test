@@ -26,8 +26,6 @@ class HomeController extends Controller
     public function __construct(PostRepository $postRepository,
 								RecordRepository $recordRepository)
     {
-        $this->middleware('auth');
-
         $this->postRepository = $postRepository;
 	    $this->recordRepository = $recordRepository;
     }
