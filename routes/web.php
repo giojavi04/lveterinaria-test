@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
-Route::get('/{post}', 'HomeController@show')->name('post.view')->middleware('guest');
+Route::get('/{post}', 'HomeController@show')->name('post.view');
 
 //Administrator
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'can:admin, auth'], function () {
